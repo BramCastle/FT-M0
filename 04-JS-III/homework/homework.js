@@ -6,7 +6,9 @@ function devolverPrimerElemento(array) {
 }
 
 
-function devolverUltimoElemento(array) {
+function devolverUltimoElemento(array = []) {
+
+  return array.pop()
   // Devuelve el último elemento de un array
   // Tu código:
 }
