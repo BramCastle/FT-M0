@@ -73,11 +73,8 @@ function arrayContiene(array = [], elemento) {
   // Devuelve "true" si está, o "false" si no está
   // Tu código:
   let findElement = array.find(item => item == elemento);
-  if(findElement != undefined){
-    return true;
-  }else{
-    return false;
-  }
+  return (findElement != undefined);
+
 }
 
 
@@ -184,11 +181,11 @@ function empiezaConNueve(n = 90) {
   //Desarrolle una función que recibe como parámetro un número entero n. Debe retornar true si el entero 
   //inicia con 9 y false en otro caso.
   //Escribe tu código aquí
-  if(n.toString()[0] == "9"){
+  if(n.toString()[0] == "9")
     return true;
-  }else{
+  else
     return false;
-  }
+  
 }
 
 
@@ -205,15 +202,15 @@ function todosIguales(arreglo) {
 } 
 
 
-function mesesDelAño(array) {
+function mesesDelAño(array = []) {
   //Dado un array que contiene algunos meses del año desordenados, recorrer el array buscando los meses de 
   // "Enero", "Marzo" y "Noviembre", guardarlo en nuevo array y retornarlo.
   //Si alguno de los meses no está, devolver: "No se encontraron los meses pedidos"
   // Tu código:
-  var arrayB = array.filter(x => x == "Enero" || x == "Marzo" || x == "Marzo")
-  let findMes = arrayB.find("Enero");
-  let findMes2 = arrayB.find("Marzo");
-  let findMes3 = arrayB.find("Marzo");
+  var arrayB = array.filter(x => x == "Enero" || x == "Marzo" || x == "Noviembre")
+  let findMes = arrayB.find(x=> x == "Enero");
+  let findMes2 = arrayB.find(x=> x == "Marzo");
+  let findMes3 = arrayB.find(x=> x == "Noviembre");
   if(findMes != undefined && findMes2 != undefined && findMes3 != undefined){
     return arrayB;
   }else{
@@ -227,6 +224,12 @@ function mayorACien(array) {
   //La función recibe un array con enteros entre 0 y 200. Recorrer el array y guardar en un nuevo array sólo los
   //valores mayores a 100 (no incluye el 100). Finalmente devolver el nuevo array.
   // Tu código:
+  let numeros = [];
+  array.forEach(x => {
+    if(x > 100)
+      numeros.push(x);
+  })
+  return numeros;
 }
 
 
@@ -238,6 +241,14 @@ function breakStatement(numero) {
   //devolver: "Se interrumpió la ejecución"
   //Pista: usá el statement 'break'
   // Tu código:
+  let array = [];
+  for (let i = 0; i < 10; i++) {
+    numero+=2
+    array.push(numero)
+    if(i == numero)
+      return "Se interrumpió la ejecución";
+  }
+  return array;
 }
 
 
@@ -248,6 +259,14 @@ function continueStatement(numero) {
   //Cuando el número de iteraciones alcance el valor 5, no se suma en ese caso y se continua con la siguiente iteración
   //Pista: usá el statement 'continue'
   // Tu código:
+  let array = [];
+  for (let i = 0; i < 10; i++) {
+    if(i != 4){
+      numero+=2
+      array.push(numero)
+    }
+  }
+  return array;
 }
 
 
