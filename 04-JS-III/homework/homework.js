@@ -138,7 +138,7 @@ function multiplicarArgumentos() {
   // Escribe tu código aquí:
   let multi = 1;
   if(arguments.length == 0)
-    return 0;
+    return arguments.length;
   else if(arguments.length == 1){
     return arguments[0];
   }
@@ -208,15 +208,11 @@ function mesesDelAño(array = []) {
   //Si alguno de los meses no está, devolver: "No se encontraron los meses pedidos"
   // Tu código:
   var arrayB = array.filter(x => x == "Enero" || x == "Marzo" || x == "Noviembre")
-  let findMes = arrayB.find(x=> x == "Enero");
-  let findMes2 = arrayB.find(x=> x == "Marzo");
-  let findMes3 = arrayB.find(x=> x == "Noviembre");
-  if(findMes != undefined && findMes2 != undefined && findMes3 != undefined){
+
+  if(arrayB.length == 3)
     return arrayB;
-  }else{
+  else
     return "No se encontraron los meses pedidos";
-  }
-  
 }
 
 
@@ -226,8 +222,7 @@ function mayorACien(array) {
   // Tu código:
   let numeros = [];
   array.forEach(x => {
-    if(x > 100)
-      numeros.push(x);
+    if(x > 100) numeros.push(x);
   })
   return numeros;
 }
